@@ -1,0 +1,20 @@
+DESCRIPTION="XKB layout indicator and switcher"
+HOMEPAGE="http://fbxkb.sourceforge.net/"
+SRC_URI="mirror://sourceforge/fbxkb/${P}.tgz"
+
+PATCH_URI="
+	0.6-as-needed.patch
+	0.6-group0-defined.patch
+"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	./configure --prefix=/usr
+	cygmake
+}
+
+src_install() {
+	cd ${B}
+	cyginstall PREFIX=${D}/usr
+}

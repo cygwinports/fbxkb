@@ -1,0 +1,6 @@
+category: X11
+requires: libgcc1 libgdk_pixbuf2.0_0 libglib2.0_0 libgtk2.0_0 libX11_6
+sdesc: "XKB layout indicator and switcher"
+ldesc: "fbxkb is NETWM compliant keyboard indicator and switcher. It 
+shows a flag of current keyboard in a systray area and allows you to 
+switch to another one."
