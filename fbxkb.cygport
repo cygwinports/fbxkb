@@ -1,0 +1,27 @@
+NAME="fbxkb"
+VERSION=0.6
+RELEASE=1
+CATEGORY="X11"
+SUMMARY="XKB layout indicator and switcher"
+DESCRIPTION="fbxkb is NETWM compliant keyboard indicator and switcher. It
+shows a flag of current keyboard in a systray area and allows you to switch
+to another one."
+HOMEPAGE="http://fbxkb.sourceforge.net/"
+SRC_URI="mirror://sourceforge/fbxkb/${P}.tgz"
+
+PATCH_URI="
+	0.6-as-needed.patch
+	0.6-group0-defined.patch
+"
+
+src_compile() {
+	lndirs
+	cd ${B}
+	./configure --prefix=/usr
+	cygmake CFLAGS="${CFLAGS}" DEVEL=1
+}
+
+src_install() {
+	cd ${B}
+	cyginstall PREFIX=${D}/usr
+}
